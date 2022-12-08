@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="TestBean" name="TestBean" class="ru.levelup.lesson5.bean.TestBean" scope="singleton"/>
+
+    <bean id="csvMovieFinder" name="csvMovieFinder" class="ru.levelup.lesson5.impl.ColonSeparatedMovieFinder" />
+    <bean id="dbMovieFinder" name="dbMovieFinder" class="ru.levelup.lesson5.impl.DatabaseFinder" />
+    <bean id="movieLister" name="movieLister" class="ru.levelup.lesson5.MovieLister">
+        <constructor-arg name="databaseFinder" ref="csvMovieFinder"/>
+    </bean>
+
+
+</beans>
