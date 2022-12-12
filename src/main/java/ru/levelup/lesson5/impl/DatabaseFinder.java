@@ -1,5 +1,6 @@
 package ru.levelup.lesson5.impl;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import ru.levelup.lesson5.MovieFinder;
 import ru.levelup.lesson5.dto.Movie;
