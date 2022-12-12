@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: levelup
+  main:
+    banner-mode: 'off'
+server:
+  port: 8081
+
+application:
+  value: 123
+  values:
+    - 'Значение1'
+    - 'Значение2'
+    - 'Значение3'
