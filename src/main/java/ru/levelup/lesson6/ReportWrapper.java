@@ -18,11 +18,11 @@ public class ReportWrapper {
 
 //    private final List<ReportService> reportServiceList;
 
-//    @Value("${application.values}")
-//    private String[] values;
+    @Value("${application.values}")
+    private String[] values;
 
-//    @Value("${application.value}")
-//    private Integer value;
+    @Value("${application.value}")
+    private Integer value;
 
     @Value("${user.dir}")
     private String userDir;
@@ -43,8 +43,8 @@ public class ReportWrapper {
     }
 
     public void printValues() {
-//        System.out.println(Arrays.toString(values));
-//        System.out.println(value);
+        System.out.println(Arrays.toString(values));
+        System.out.println(value);
         System.out.println(userDir);
     }
 }

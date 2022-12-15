@@ -1,11 +1,12 @@
 package ru.levelup.lesson6;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.levelup.lesson6.bean.Printer;
 import ru.levelup.lesson6.config.ApplicationConfig;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class ReportRunner {
 
     public static void main(String[] args) {

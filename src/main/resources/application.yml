@@ -3,14 +3,27 @@ spring:
     name: levelup
   main:
     banner-mode: 'off'
+  datasource:
+    url: jdbc:mysql://localhost:3306/db
+    username: user
+    password: password
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: postgres
+#    driverClassName: org.postgresql.Driver
+  liquibase:
+    change-log: 'classpath:db/migrations/changeLog.xml'
+    enabled: false
 server:
   port: 8081
-
-application:
-  value: 123
-  values:
-    - 'Значение1'
-    - 'Значение2'
-    - 'Значение3'
+levelup:
+  application:
+    value: 123
+    values:
+      - 'Значение1'
+      - 'Значение2'
+      - 'Значение3'
 #  report:
 #    type: pdf
