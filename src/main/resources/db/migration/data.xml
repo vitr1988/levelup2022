@@ -1,0 +1,39 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Vitalii Ivanov" id="Populate-table-genre">
+        <preConditions>
+            <sqlCheck expectedResult="0"><![CDATA[
+                select count(*)
+                from department
+                where id = 0
+                ]]></sqlCheck>
+        </preConditions>
+        <sqlFile relativeToChangelogFile="true" path="employee-department.sql"/>
+    </changeSet>
+
+    <changeSet author="Vitalii Ivanov" id="Populate-table-department-and-employee">
+        <preConditions>
+            <sqlCheck expectedResult="0"><![CDATA[
+                select count(*)
+                from department
+                where id = 2
+                ]]></sqlCheck>
+        </preConditions>
+        <insert tableName="department">
+            <column name="id" value="2"/>
+            <column name="name" value="Finance"/>
+        </insert>
+
+        <insert tableName="employee">
+            <column name="emp_id" valueComputed="5"/>
+            <column name="emp_name" value="Grishin Andrey"/>
+            <column name="salary" value="5000"/>
+            <column name="department_id" valueComputed="(SELECT MAX(ID) FROM department)"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

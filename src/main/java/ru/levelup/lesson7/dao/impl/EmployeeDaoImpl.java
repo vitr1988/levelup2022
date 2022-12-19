@@ -21,7 +21,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         this.jdbcOperations = jdbcOperations;
         this.employeeRowMapper = (rs, row) -> {
             final Employee employee = new Employee();
-            employee.setId(rs.getInt("emp_id"));
+            employee.setId(rs.wasNull() ? null : rs.getInt("emp_id"));
             employee.setEmpName(rs.getString("emp_name"));
             Department department = departmentDao.getById(rs.getInt("department_id")).orElse(null);
             employee.setDepartment(department);

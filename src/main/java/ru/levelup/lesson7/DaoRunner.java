@@ -13,7 +13,7 @@ public class DaoRunner {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(DaoRunner.class, args);
         DepartmentDao departmentDao = context.getBean(DepartmentDao.class);
-        departmentDao.create(new Department(1, "IT"));
+        departmentDao.create(new Department(124, "Unknown2"));
         System.out.println("---");
         EmployeeDao employeeDao = context.getBean(EmployeeDao.class);
         System.out.println(employeeDao.findAll());
