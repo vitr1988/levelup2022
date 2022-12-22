@@ -9,7 +9,9 @@ import lombok.ToString;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "department")
@@ -25,4 +27,7 @@ public class Department {
 
     @Column(name = "name")
     private String name;
+
+//    @OneToMany(mappedBy = "department")
+//    private List<Employee> employeeList;
 }

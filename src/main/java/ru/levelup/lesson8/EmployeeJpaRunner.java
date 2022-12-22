@@ -23,5 +23,7 @@ public class EmployeeJpaRunner {
         DepartmentServiceImpl departmentService = context.getBean(DepartmentServiceImpl.class);
         department = departmentService.save(department);
         employeeService.create(new Employee(26, "Petrov Gennady", BigDecimal.ONE, department));
+
+        employeeService.deleteById(26);
     }
 }
