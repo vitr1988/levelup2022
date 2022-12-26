@@ -36,4 +36,8 @@
         </insert>
     </changeSet>
 
+    <changeSet author="Vitalii Ivanov" id="Populate-genre-table">
+        <sqlFile relativeToChangelogFile="true" path="genre-data.sql" />
+    </changeSet>
+
 </databaseChangeLog>
