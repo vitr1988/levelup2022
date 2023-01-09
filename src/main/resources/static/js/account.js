@@ -1,7 +1,7 @@
 $(function () {
     $('#create').click(function () {
         $.ajax({
-            url: '/api/accounts',
+            url: '/levelup/api/accounts',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ $(function () {
                 'owner': $('#owner').val(),
                 'balance': $('#balance').val()
             }),
-            success: function () {
+            success: function (data) {
                 alert('Создание успешно!');
             },
             error: function(xhr, status, error) {
