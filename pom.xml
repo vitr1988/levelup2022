@@ -22,6 +22,8 @@
         <webjar.version>3.3.1</webjar.version>
         <bootstrap.version>4.5.0</bootstrap.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <mockito-core.version>2.28.2</mockito-core.version>
+
         <mapstruct.defaulComponentModel>spring</mapstruct.defaulComponentModel>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     </properties>
@@ -92,6 +94,26 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-core.version}</version>
             <scope>test</scope>
         </dependency>
 
