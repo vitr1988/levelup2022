@@ -37,7 +37,7 @@ public class CalculatorServiceTest {
         log.info("Запустился тестовый метод");
 
 //        printService = Mockito.mock(PrintService.class);
-        Mockito.when(printService.printAndGet(Mockito.anyInt())).thenReturn(-1);
+//        Mockito.when(printService.printAndGet(Mockito.anyInt())).thenReturn(-1);
         calculatorService = new CalculatorService(printService);
     }
 
