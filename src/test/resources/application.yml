@@ -16,3 +16,4 @@ spring:
       enabled: false
   liquibase:
     change-log: 'classpath:db-scripts/changeLog.xml'
+#    enabled: false
